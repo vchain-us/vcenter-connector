@@ -14,7 +14,7 @@ RUN go test -v ./...
 # Stripping via -ldflags "-s -w" 
 RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags "-s -w" -installsuffix cgo -o ./connector
 
-FROM alpine:3.8
+FROM alpine:3.9
 
 RUN addgroup -S app \
     && adduser -S -g app app
